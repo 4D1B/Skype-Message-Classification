@@ -6,11 +6,8 @@ d = json_normalize(d, 'messages', ['group' ]) #normalize the complex JSON file t
 columns = ['id', 'messagetype', 'version','content', 'conversationid','from','properties','amsreferences', 'properties.emotions',  'properties.isserversidegenerated','properties.deletetime', 'properties.edittime', 'properties.urlpreviews', 'properties.forwardMetadata','properties.albumId','properties.poll' ]
 d.drop(columns, inplace=True, axis=1) # Drops unusable column for better time complexity and reduce loading time
 
-
 dataFNet = d[d['group'] == 'ActiveNetwork'] #divide the dataframe based on column value
 dataFSoft = d[d['group'] == 'SoftwareServices'] #divide the dataframe based on column value
-
-dataFSoft
 
 #For Software Division
 dataFSoft['originalarrivaltime'] = pd.to_datetime(dataFSoft['originalarrivaltime'], errors='coerce') # formats the date time using panda library
@@ -19,7 +16,6 @@ dataFSoft['originalarrivaltime'] = dataFSoft['originalarrivaltime'].astype(str).
 dataFSoft=pd.pivot_table(dataFSoft,values='originalarrivaltime', index='displayName', columns='originalarrivaltime',aggfunc={'originalarrivaltime': 'count'}) # uses pivot table for synchronization of the date column to header and match with displayName
 dataFSoft.fillna(0,inplace=True) # fill all missing value with zero
 dataFSoft.to_csv('software.csv') # import the result to a csv file
-
 
 
 #For Network Division
@@ -33,4 +29,3 @@ dataFNet.drop(columns=['group', 'year','month'], inplace=True, axis=1) #drops ex
 dataFNet=pd.pivot_table(dataFNet,values='originalarrivaltime', index='displayName', columns='originalarrivaltime',aggfunc={'originalarrivaltime': 'count'}) # uses pivot table for synchronization of the date column to header and match with displayName
 dataFNet.fillna(0,inplace=True) # fill all missing value with zero
 dataFNet.to_csv('network.csv') # import the result to a csv file
-dataFSoft
