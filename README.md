@@ -17,8 +17,8 @@ python
 Running this command on command prompt should be giving the python version of the system. If the system doesn't have python installed, it can be done via browser using google collab. 
 
 ```
-https://colab.research.google.com/notebooks/intro.ipynb
-https://colab.research.google.com/drive/1WCP5ZEtRJL0QvT59ectoyv_3Uylkw5RJ?usp=sharing
+https://colab.research.google.com/notebooks/intro.ipynb --for new Colab
+https://colab.research.google.com/drive/1WCP5ZEtRJL0QvT59ectoyv_3Uylkw5RJ?usp=sharing -- To access this program which is written in google colab
 ```
 
 ### Installing
