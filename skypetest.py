@@ -14,7 +14,7 @@ dataFNet = d[d['group'] == networkstring]  #divide the dataframe based on column
 dataFSoft = d[d['group'] == softwarestring] #divide the dataframe based on column value
 
 #For Software Division
-dataFSoft['originalarrivaltime'] = pd.to_datetime(dataFSoft['originalarrivaltime'], errors='coerce') # formats the data time using panda library
+dataFSoft['originalarrivaltime'] = pd.to_datetime(dataFSoft['originalarrivaltime'], errors='coerce') # formats the date time using panda library
 dataFSoft['year'] = pd.DatetimeIndex(dataFSoft['originalarrivaltime']).year # adds new column for further checking of year for logical check
 dataFSoft['month'] = pd.DatetimeIndex(dataFSoft['originalarrivaltime']).month # adds new month for further logical checking
 dataFSoft= dataFSoft[dataFSoft.month.astype(str).str.contains('4')]  # checks if the rows matches specific month, months in number form, i.e. January-1, Feb-2
