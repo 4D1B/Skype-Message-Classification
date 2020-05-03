@@ -56,9 +56,9 @@ The following briefly explains the program
 
 
 ```
-with open('sample_data/yes.json') as f: d = json.load(f)
+with open('yes.json') as f: d = json.load(f)
 ```
-This command loads the json file into a dataframe. For instance, d is a random name given.
+This command loads the json file into a dataframe where yes.json is the source data file in JSON format. For instance, d is a random name given.
 
 ```
 d = json_normalize(d, 'messages', ['group' ])
