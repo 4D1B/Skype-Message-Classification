@@ -13,7 +13,7 @@ dataFSoft = d[d['group'] == 'SoftwareServices'] #divide the dataframe based on c
 dataFSoft
 
 #For Software Division
-dataFSoft['originalarrivaltime'] = pd.to_datetime(dataFSoft['originalarrivaltime'], errors='coerce') # formats the data time using panda library
+dataFSoft['originalarrivaltime'] = pd.to_datetime(dataFSoft['originalarrivaltime'], errors='coerce') # formats the date time using panda library
 dataFSoft= dataFSoft[dataFSoft.originalarrivaltime.astype(str).str.contains('2020-04')] #checks row against certain year
 dataFSoft['originalarrivaltime'] = dataFSoft['originalarrivaltime'].astype(str).str[:10] # make a substring to reduce loading
 dataFSoft=pd.pivot_table(dataFSoft,values='originalarrivaltime', index='displayName', columns='originalarrivaltime',aggfunc={'originalarrivaltime': 'count'}) # uses pivot table for synchronization of the date column to header and match with displayName
