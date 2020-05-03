@@ -21,6 +21,8 @@ https://colab.research.google.com/notebooks/intro.ipynb --for new Colab
 https://colab.research.google.com/drive/1WCP5ZEtRJL0QvT59ectoyv_3Uylkw5RJ?usp=sharing -- To access this program which is written in google colab
 ```
 
+yes.json which is the raw JSON file has to be uploaded in the folder section of the google colab if it is not already there.
+
 ### Installing
 
 Python can be installed from this given site.
@@ -40,7 +42,9 @@ python skypetest.py
 ```
 
 Here, skypetest.py is the name of the file and python command is used to redirect to execute any specific python file.
-
+To be Noted down that, in this program , source data file is used as 'yes.json'. It can be modified as per the location of the user's data source file. For example, 
+If the user stores the JSON file in home/4d1b/ folder, the entire location has to be set as such so that the program can find the JSON file. 
+It is recommended to set the working directory to this Git cloned folder so that, nothing extra has to be done.
 
 ### Break down into end to end tests
 
@@ -118,7 +122,7 @@ Pivot table to move a specific columns values as header which counts the the num
 ```
 final.to_csv('software.csv')
 ```
-Finally, the output is converted to a csv formatted file.
+Finally, the output is converted to a csv formatted file. It is to be noted that, this CSV file will be created to the present working directory of the execution command.
 
 
 ## Built With
