@@ -26,7 +26,7 @@ https://colab.research.google.com/drive/1WCP5ZEtRJL0QvT59ectoyv_3Uylkw5RJ?usp=sh
 Python can be installed from this given site.
 
 ```
-https://www.python.org/downloads/windows/
+https://www.python.org/downloads/
 ```
 
 
