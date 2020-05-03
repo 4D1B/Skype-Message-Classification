@@ -19,7 +19,7 @@ dataFSoft['year'] = pd.DatetimeIndex(dataFSoft['originalarrivaltime']).year # ad
 dataFSoft['month'] = pd.DatetimeIndex(dataFSoft['originalarrivaltime']).month # adds new month for further logical checking
 dataFSoft= dataFSoft[dataFSoft.month.astype(str).str.contains('4')]  # checks if the rows matches specific month, months in number form, i.e. January-1, Feb-2
 dataFSoft= dataFSoft[dataFSoft.year.astype(str).str.contains('2020')] #checks row against certain year
-dataFSoft['originalarrivaltime'] = dataFSoft['originalarrivaltime'].astype(str).str[:10] # make a substring to reduce loading
+dataFSoft['originalarrivaltime'] = dataFSoft['originalarrivaltime'].astype(str).str[:10] # make a substring of entire time stamp to minimize loading time and keep only the date
 dataFSoft.drop(columns=['group', 'year','month'], inplace=True, axis=1) #drops extra column for better time complexity
 dataFSoft=pd.pivot_table(dataFSoft,values='originalarrivaltime', index='displayName', columns='originalarrivaltime',aggfunc={'originalarrivaltime': 'count'}) # uses pivot table for synchronization of the date column to header and match with displayName
 dataFSoft.fillna(0,inplace=True) # fill all missing value with zero
