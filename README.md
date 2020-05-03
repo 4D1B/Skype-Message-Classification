@@ -50,7 +50,7 @@ This skypetest.py gives output on all the existing users of the skype chat group
 
 ```
 
-### And coding style tests
+### Program coding part
 
 The following briefly explains the program
 
@@ -133,7 +133,7 @@ Finally, the output is converted to a csv formatted file.
 
 ## Authors
 
-* **4d1b** - *Initial work* - [PurpleBooth](https://github.com/4d1b)
+* **4d1b** - *Initial work* - [ADG](https://github.com/4d1b)
 
 
 
